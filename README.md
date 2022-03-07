@@ -137,6 +137,7 @@ Ex:
 `City.show(my_city_id)`
 
 # Tests
+
 All unittests can be found in the [tests](./tests) directory.
 
 # Author
