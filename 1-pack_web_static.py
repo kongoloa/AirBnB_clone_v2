@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 """
-    Script generates a .tgz archive from web_static folder
+    Generates a .tgz archive from the contents of the web_static folder of your AirBnB Clone repo, using the function do_pack.
 """
 
-
 def do_pack():
-    """
-    function creates a .tgz
-    """
+     """Function to compress files"""
     from fabric.operations import local
     from datetime import datetime
 
