@@ -1,20 +1,16 @@
 #!/usr/bin/python3
 """
-Script generates a .tgz archive from web_static folder
+A Fabric script (based on the file 1-pack_web_static.py) that distributes an archive to your web servers, using the function do_deploy
 """
 from fabric.operations import local, run, put, env
 from datetime import datetime
 import os
 
-
 env.hosts = ['35.237.142.70', '35.231.108.250']
 env.user = 'ubuntu'
 
-
 def do_pack():
-    """
-    function creates a .tgz archive
-    """
+    """ Function to compress files in an archive """
 
     name = "./versions/web_static_{}.tgz"
     name = name.format(datetime.now().strftime("%Y%m%d%H%M%S"))
@@ -27,9 +23,7 @@ def do_pack():
 
 
 def do_deploy(archive_path):
-    """
-    function to dist to web server
-    """
+    """ function to dist to web server """
 
     if not os.path.exists(archive_path):
         return False
